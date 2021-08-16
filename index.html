@@ -4,14 +4,24 @@
     <head>
         <title>Sorting Visualiser</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <style>
+            .navbar-custom {
+                background: #30383d; 
+                border-radius: 0%;
+            }
+            a {
+                color: gold;
+            }
+        </style>
     </head>
 
-    <body style="overflow: hidden;">
+    <body >
 
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-custom navbar-fixed-top" id="navBor">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Sorting Algorithms Visualiser</a>
+                    <a class="navbar-brand">Sorting Visualiser</a>
+                    <!-- <h1 class="navbar-brand">Sorting Visualiser</h1> -->
                 </div>
                 <div class="collapse navbar-collapse">
                     <div class="nav navbar-nav navbar-right">
@@ -23,10 +33,11 @@
             </div>
         </nav>
 
-        <div class="row text-center" style="
+        <div class="row text-center"  style="
                                             display: flex; 
                                             flex-wrap: wrap; 
-                                            margin: 10px auto; 
+                                            margin: 0 auto;
+                                            margin-top: 75px;
                                             min-width: 600px;">
                 <!-- Bubble Sort -->
                 <div class="col-md-6 col-md-6 containThumbnail" style="min-width: 500px; margin: 0 auto;">

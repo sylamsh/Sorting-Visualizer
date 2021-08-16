@@ -2,6 +2,8 @@ const canvas = document.querySelectorAll('canvas');
 const ctxArray = [...canvas].map(cvs => cvs.getContext('2d'));
 const thumbnail = document.querySelectorAll('.containThumbnail');
 const start = document.querySelector('#start-stop');
+const navBar = document.querySelector('#navBor');
+const row = document.querySelector('.row');
 
 var numOfBars = 69;
 let lastFrameTime = 0;
@@ -24,14 +26,21 @@ start.addEventListener('click', ()=> {
 });
 
 function reset(newData) {
-	
+	console.log(navBar.style.height);
+	var vheight; var vwidth;
+	if(window.innerWidth > window.innerHeight) {
+		vheight = (window.innerHeight - navBar.style.height)/3 - 20;
+		vwidth = thumbnail[0].offsetWidth - '50';
+	} else {
+		navBar.style.paddingTop = (window.innerHeight/2).toString + '!important';
+		vheight = (window.innerHeight - navBar.style.height)/4.8 - 20;
+		vwidth = (window.innerWidth - 60);
+	}
 	for(var i=0; i<canvas.length; i++)
 	{
-		var vheight = (window.innerHeight - document.querySelector('.navbar').style.height)/3 - 20;
-		var vwidth = (window.innerWidth - 60) / 2;
 		thumbnail[i].style.offsetWidth = vwidth;
 		canvas[i].height = vheight.toString() ;
-		canvas[i].width = thumbnail[i].offsetWidth - '50';
+		canvas[i].width = vwidth;
 	}
 	if(newData){
 		sorter[0] = new BubbleSort();
