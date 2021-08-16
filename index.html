@@ -9,8 +9,42 @@
                 background: #30383d; 
                 border-radius: 0%;
             }
-            a {
+            a, h1{
                 color: gold;
+            }
+            .row {
+                display: flex; 
+                flex-wrap: wrap; 
+                margin: 0 auto;
+                margin-top: 75px;
+                min-width: 600px;
+            }
+            @media (orientation : portrait) {
+                /* body {
+                    
+                } */
+                .navbar-custom {
+                    height: 8%;
+                }
+                li, .navbar-brand {
+                    color: gold;
+                }
+                li {
+                    font-size: xx-large;
+                    margin: 0 auto;
+                    margin-top: 8%;
+                }
+                .navbar-brand {
+                    font-size : 42px ;
+                    margin-top: 9.5%;
+                }
+                .row {
+                    
+                    margin-top: 17%;
+                }
+                h4 {
+                    font-size: xx-large;
+                }
             }
         </style>
     </head>
@@ -33,12 +67,7 @@
             </div>
         </nav>
 
-        <div class="row text-center"  style="
-                                            display: flex; 
-                                            flex-wrap: wrap; 
-                                            margin: 0 auto;
-                                            margin-top: 75px;
-                                            min-width: 600px;">
+        <div class="row text-center">
                 <!-- Bubble Sort -->
                 <div class="col-md-6 col-md-6 containThumbnail" style="min-width: 500px; margin: 0 auto;">
                     <div class="thumbnail">

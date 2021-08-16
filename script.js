@@ -26,14 +26,12 @@ start.addEventListener('click', ()=> {
 });
 
 function reset(newData) {
-	console.log(navBar.style.height);
 	var vheight; var vwidth;
 	if(window.innerWidth > window.innerHeight) {
 		vheight = (window.innerHeight - navBar.style.height)/3 - 20;
 		vwidth = thumbnail[0].offsetWidth - '50';
 	} else {
-		navBar.style.paddingTop = (window.innerHeight/2).toString + '!important';
-		vheight = (window.innerHeight - navBar.style.height)/4.8 - 20;
+		vheight = (window.innerHeight - navBar.style.height)/4.8 - 60;
 		vwidth = (window.innerWidth - 60);
 	}
 	for(var i=0; i<canvas.length; i++)
