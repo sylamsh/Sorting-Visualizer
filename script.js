@@ -11,8 +11,9 @@ var sorter = [];
 let datagram = [];
 let looping =  false;
 
-document.querySelector('#new-data-btn').addEventListener('click', () => reset());
-window.addEventListener('load', () => reset());
+document.querySelector('#new-data-btn').addEventListener('click', () => reset(true));
+window.addEventListener('load', () => reset(true));
+window.addEventListener('resize', () => reset(false));
 start.addEventListener('click', ()=> {
 	looping = !looping;
 	if(looping)
@@ -22,26 +23,31 @@ start.addEventListener('click', ()=> {
 	loop();
 });
 
-function reset() {
-	sorter[0] = new BubbleSort();
-	sorter[1] = new SelectionSort();
-	sorter[2] = new InsertionSort();
-	sorter[3] = new QuickSort();
-
+function reset(newData) {
+	
 	for(var i=0; i<canvas.length; i++)
 	{
-		canvas[i].height = '170';
+		var vheight = (window.innerHeight - document.querySelector('.navbar').style.height)/3 - 20;
+		var vwidth = (window.innerWidth - 60) / 2;
+		thumbnail[i].style.offsetWidth = vwidth;
+		canvas[i].height = vheight.toString() ;
 		canvas[i].width = thumbnail[i].offsetWidth - '50';
 	}
-
-	datagram = [];
-	randomData = shuffledArrayInRange();
-	for (var i = 0; i < sorter.length; i++){
-		datagram.push(new DataRepresentation(0,
-											100 + canvas[i].height * i
-											,canvas[i].width,
-											canvas[i].height,
-											ctxArray[i]));
+	if(newData){
+		sorter[0] = new BubbleSort();
+		sorter[1] = new SelectionSort();
+		sorter[2] = new InsertionSort();
+		sorter[3] = new QuickSort();
+	
+		datagram = [];
+		randomData = shuffledArrayInRange();
+		for (var i = 0; i < sorter.length; i++){
+			datagram.push(new DataRepresentation(0,
+												100 + canvas[i].height * i
+												,canvas[i].width,
+												canvas[i].height,
+												ctxArray[i]));
+		}
 	}
 	loop();
 };
