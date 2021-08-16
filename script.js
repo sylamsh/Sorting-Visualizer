@@ -3,7 +3,7 @@ const ctxArray = [...canvas].map(cvs => cvs.getContext('2d'));
 const thumbnail = document.querySelectorAll('.containThumbnail');
 const start = document.querySelector('#start-stop');
 
-var numOfBars = 40;
+var numOfBars = 69;
 let lastFrameTime = 0;
 let stepTimer = 0;
 let stepSpeed = 1;
@@ -30,7 +30,7 @@ function reset() {
 
 	for(var i=0; i<canvas.length; i++)
 	{
-		canvas[i].height = '140';
+		canvas[i].height = '170';
 		canvas[i].width = thumbnail[i].offsetWidth - '50';
 	}
 
@@ -61,7 +61,7 @@ function loop(frameTime = 16) {
 }
 
 function update() {
-	stepSpeed = 25;
+	stepSpeed = 23;
 	if(lastFrameTime - stepTimer > stepSpeed)
 	{
 		for(let j = 0; j < Math.floor(1000 / 60 / stepSpeed) + 1; j++)

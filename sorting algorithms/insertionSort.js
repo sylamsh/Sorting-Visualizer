@@ -34,5 +34,4 @@ class InsertionSort
 		this.j=0;
 		this.carry=-Infinity;
 	}
-
 }
